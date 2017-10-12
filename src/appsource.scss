@@ -1,0 +1,37 @@
+@mixin background-it($path) {
+    background-image: $path;
+    color:white;
+}
+
+$image: url(/img/IMG_20160809_123528808.jpg);
+$text-color: yellow;
+
+.custom {
+    @include background-it($image);
+    text-align:center;
+}
+
+.app-appear {
+    opacity:0.01;
+    &.app-appear-active {
+        opacity:1;
+        transition: opacity 500ms ease-in;
+    }
+}
+
+.app-enter {
+    opacity:0.01;
+    &-active {
+        opacity:1;
+        transition: opacity 5s ease-in;
+    }
+}
+
+.app-leave {
+    opacity:1;
+}
+
+.app-leave-active {
+    opacity:0;
+    transition: opacity 500ms ease-out;
+}
